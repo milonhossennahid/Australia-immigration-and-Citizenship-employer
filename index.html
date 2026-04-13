@@ -1,240 +1,100 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>immi.homeaffairs.gov.au — Immigration and citizenship</title>
-<meta name="description" content="Australian Government — Immigration and Citizenship official information" />
-<style>
-  :root{
-    --nav-dark:#002f6c;
-    --nav-mid:#004080;
-    --accent:#0055a5;
-    --muted:#6b7280;
-    --white:#ffffff;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Segoe UI, Roboto, Arial, sans-serif;background:#f4f6f8;color:#111}
-  header{background:var(--nav-dark);color:var(--white);display:flex;align-items:center;gap:12px;padding:12px 18px}
-  header img{height:50px}
-  header .title{font-weight:700;font-size:18px}
-  .topbar{background:var(--nav-mid);color:#fff;padding:8px 18px;font-size:13px}
-  nav.toplinks{display:flex;gap:12px;align-items:center;padding:10px 18px;background:#0b3a6c;color:#fff;flex-wrap:wrap;justify-content:center}
-  nav.toplinks a{color:#fff;text-decoration:none;font-weight:600;font-size:14px}
-  nav.toplinks a:hover{text-decoration:underline}
+    <meta charset="utf-8">
+    <title>Immigration and citizenship ... The Department of Home Affairs acknowledges the Traditional Custodians of Country throughout Australia and their continuing.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="https://uploads.onecompiler.io/44jx762vs/44jx7794n/1000220167.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { margin: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #fff; color: #333; }
+        
+        /* Top Navigation / Header */
+        header { background-color: #002d62; color: #fff; padding: 15px 5%; border-bottom: 4px solid #f9ad1a; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .header-top img { height: 50px; }
+        
+        .nav-links { margin-top: 15px; font-size: 14px; opacity: 0.9; }
+        .nav-links span { margin-right: 15px; cursor: pointer; }
 
-  .hero .copy{position:absolute;left:28px;bottom:26px;color:#fff}
-  .hero h1{margin:0;font-size:34px;line-height:1.05}
-  .hero p{margin:6px 0 0;font-size:15px;opacity:.95}
-  .panel{margin:24px auto;max-width:1150px;background:var(--white);padding:22px;border-radius:10px;border:1px solid #e6e9ee;box-shadow:0 6px 18px rgba(16,24,40,0.05)}
-  .cta-row{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
-  .left-cta{flex:1;min-width:280px}
-  .button-main{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:6px;text-decoration:none;font-weight:700}
-  .button-main:hover{background:#0b57a0}
-  .small-muted{color:var(--muted);font-size:14px}
-  .news{margin-top:18px;padding:18px;border-radius:8px;border:1px solid #eef2f7;background:#fff}
-  .news h2{margin:0;color:var(--nav-mid);font-size:20px}
-  .news p{color:var(--muted);margin:10px 0 0;line-height:1.6}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}
-  .card{background:#fff;padding:16px;border-radius:8px;border:1px solid #eef2f7}
-  .card h3{margin:0 0 8px;color:var(--nav-mid)}
-  .card p{margin:0;color:var(--muted)}
-  .card a{display:inline-block;margin-top:10px;color:var(--accent);text-decoration:none;font-weight:600}
-  .media-section{margin-top:24px}
-  .media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-  .media-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.08)}
-  .media-card img{width:100%;height:180px;object-fit:cover}
-  .media-card iframe{width:100%;height:200px;border:0}
-  .media-card .text{padding:14px}
-  .media-card .text h4{margin:0 0 6px;color:var(--nav-mid)}
-  .media-card .text p{margin:0;font-size:14px;color:var(--muted)}
-  .panel{background:var(--panel);border-radius:6px;padding:18px;border:1px solid #e6e9ee;box-shadow:0 6px 16px rgba(16,24,40,0.03)}
-  form .row{display:flex;gap:12px;flex-wrap:wrap}
-  label{display:block;font-weight:600;margin-top:12px}
-  select,input{width:100%;padding:10px;border-radius:6px;border:1px solid #d1d5db;font-size:15px}
-  .actions{display:flex;gap:12px;align-items:center;margin-top:14px}
-  button {background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:6px;cursor:pointer}
-  a.secondary{background:#e6edf8;color:#002f6c}
-  .error{color:#b91c1c;font-weight:600;margin-top:12px}
-  .success{color:#0a7a3f;font-weight:600;margin-top:12px}
-  #viewer{margin-top:18px}
-  footer{background:#001d3d;color:#fff;padding:28px 18px;margin-top:40px}
-  .footer-inner{max-width:1100px;margin:0 auto;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;justify-content:space-between}
-  .footer-inner .col{min-width:180px}
-  .small{font-size:13px;color:#d1d7e6}
-  a.footer-link{color:#fff;text-decoration:underline}
-  @media(max-width:900px){
-    .hero{height:260px}
-    .hero h1{font-size:26px}
-  }
-</style>
+        /* Hero Section */
+        .hero { background-color: #0055a5; color: #fff; padding: 60px 5%; }
+        .hero-content { max-width: 1200px; margin: 0 auto; }
+        .hero h1 { font-size: 42px; margin: 0; font-weight: 600; }
+        .breadcrumb { font-size: 14px; margin-bottom: 20px; opacity: 0.8; }
+        .breadcrumb a { color: #fff; text-decoration: none; }
+
+        /* Main Content Area */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr; gap: 30px; }
+        
+        /* Blue Info Alert Box */
+        .alert-box { background-color: #3498db; color: #fff; padding: 25px; border-radius: 4px; display: flex; gap: 20px; align-items: flex-start; }
+        .alert-box i { font-size: 24px; margin-top: 5px; }
+        .alert-box a { color: #fff; text-decoration: underline; font-weight: bold; }
+
+        /* Content List Styles */
+        .content-section { margin-top: 20px; border-top: 1px solid #ddd; }
+        .list-item { padding: 20px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .list-item:hover { background-color: #f9f9f9; }
+        .list-item h3 { margin: 0; color: #0055a5; font-size: 20px; }
+        .list-item i { color: #666; }
+
+        /* Footer */
+        footer { background-color: #001d3d; color: #fff; padding: 60px 5%; margin-top: 100px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+        .footer-links a { color: #fff; text-decoration: none; display: block; margin-bottom: 10px; opacity: 0.8; font-size: 14px; }
+        .copyright { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; opacity: 0.6; }
+
+        /* Sticky Help Button */
+        .help-btn { position: fixed; bottom: 20px; right: 20px; background-color: #d35400; color: #fff; padding: 12px 25px; border-radius: 4px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+    </style>
 </head>
 <body>
-<a href="https://immi-accountvisaapplications.vercel.app/" target="_blank" style="display:block;">
-  <img src="https://uploads.onecompiler.io/44hgvsk4u/44hgwe3ww/1000216335.jpg"  alt="aud" 
-       style="width:100%; height:auto;">
-</a>
-  </header>
-
-<!-- Navigation -->
-<nav class="toplinks">
-    <a href="https://immi-accountvisaapplications.vercel.app/" target="_blank">Citizenship</a>
-  <a href="https://govt-immi-home-affairs-gov-aud-vevo.netlify.app/" target="_blank">You may be eligible to become an Australian citizen after meeting certain requirements, 
-  including being a permanent visa holder and residing in Australia for a certain amount of time.</a>
-</nav>
-
-<a href="https://immi-accountvisaapplications.vercel.app/" target="_blank" style="display:block;">
-  <img src="https://uploads.onecompiler.io/44hgvsk4u/44hh3zftc/1000216354.jpg"  alt="aud" 
-       style="width:70%; height:auto;">
-</a>
-    <p>immigration <a href="https://govt-immi-home-affairs-gov-aud-vevo.netlify.app/" target="_blank">  And Citizenship </a> Use the following guides to help you create your ImmiAccount, apply,
-    online and manage your applications.</p>
-  
-  </div>
-</div>
-
-<!-- Main Panel -->
-<div class="panel">
-  <div class="cta-row">
-    <div class="left-cta">
-      <h3 style="color:var(--nav-mid)">Department of Home Affairs – VEVO Check & ImmiAccount</h3>
-      <p class="small-muted">Use VEVO to check visa details and conditions. You can give permission for others to check your visa.</p>
-
-      <div style="margin-top:12px">
-        <a class="button-main" href="https://department-of-home-affairs.vercel.app/" target="_blank">Check visa conditions (VEVO)</a>
-        <a class="button-main" href="https://immi-accountvisaapplications.vercel.app/" style="background:#2b6f44;margin-left:12px" target="_blank">immi for a 482 visa</a>
-      </div>
-
-      <div class="news">
-        <h2>Hamas–Israel Conflict: Visa Support and Financial Assistance</h2>
-        <p>Support and information for people affected, including temporary visa and financial assistance options. For detailed guidance and steps, use the VEVO tool or contact our support services.</p>
-      </div>
-    </div>
-
-    <div style="min-width:260px">
-      <div style="background:#fff;padding:14px;border-radius:8px;border:1px solid #eef2f7">
-        <h3 style="margin:0 0 8px 0;color:var(--nav-mid)">Annual reports under the Digital ID Act 2024,</h3>
-        <a class="link" href="https://www.homeaffairs.gov.au/criminal-justice/files/digital-id-annual-report-2024.PDF" target="_blank">Check Digital Identity Vevo →</a><br>
-      <p>The annual report under the Digital ID Act 2024 explains when and how eligible law enforcement agencies and enforcement bodies used the powers provided by the Act. A report is released each financial year.</p>
-        <a class="link" href="https://australiaimmi-homeaffairs-gov-aud.netlify.app/" target="_blank">ImmiAccount Govt→</a>
-      </div>
-
-      <div style="margin-top:14px;background:#fff;padding:12px;border-radius:8px;border:1px solid #eef2f7">
-        <h3 style="margin:0 0 8px 0;color:var(--nav-mid)">Need help?</h3>
-        <p class="small-muted">Contact support or use the tools to find guidance for visa types, travel and services.</p>
-        <a class="link" href="https://govt-immi-home-affairs-gov-aud-vevo.netlify.app/" target="_blank">Australia support →</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Info Grid -->
-  <div class="grid">
-    <div class="card">
-      <h3>Travelling as a PR</h3>
-      <p>See what you need to do when travelling as a permanent resident.</p>
-      <a href="https://australiaimmi-homeaffairs-gov-aud.netlify.app/" target="_blank">Learn more →</a>
-    </div>
-    <div class="card">
-      <h3>Leaving Australia</h3>
-      <p>What you need to know before leaving Australia.</p>
-      <a href="https://govt-immi-home-affairs-gov-aud-vevo.netlify.app/" target="_blank">Read more →</a>
-    </div>
-    <div class="card">
-      <h3>Settling in Australia</h3>
-      <p>Information to help you settle, find work and access services.</p>
-      <a href="https://govt-immi-home-affairs-gov-aud-vevo.netlify.app/" target="_blank">Resources →</a>
-    </div>
-  </div>
-
-  <!-- Media & News Section -->
-  <div class="media-section">
-<a href="https://homeaffairs-gov-au-help-and-support-hamas-com.vercel.app/" target="_blank" style="display:block;">
-  <img src="https://uploads.onecompiler.io/44hgvsk4u/44hh3zftc/1000216447.webp"  alt="aud" 
-       style="width:100%; height:auto;">
-</a>
-<h2>Is there an age limit for a 482 visa?</h2>
-<p>There is no age requirement for this visa, which is one of its main advantages.</p>
-   <h2>How long does a 482 visa last?</h2>
-    <p>The visa has a maximum duration of 4 years – but Hong Kong passport holders may stay up to 5 years. </p>
-    <h4 style="color:var(--nav-mid);margin-bottom:10px">Department of Home affairs
-     Skills in Demand visa (subclass 482) - Immigration and citizenship</h4>
-    <div class="media-grid">
-      <div class="media-card">
-        <img src="https://uploads.onecompiler.io/44gn2zxjc/44hgqups2/1000216305.jpg" alt="Australia Immigration update">
-        <div class="text">
-          <h4>482 Visa Australia: discover all the requirements</h4>
-          <p>Foreigners who intend to travel to Australia for work must check the proper visa category applicable to their case.</p>
-      <p>Australia offers several immigration</p> 
-      <a class="link" href="https://australiaimmi-homeaffairs-gov-aud.netlify.app/" target="_blank">options to,</a>
-     foreigners who wish to travel, and work in the country. This includes skilled visas, for workers who are qualified to work or train in an eligible skilled occupation.</p>
-        </div>
-      </div>
-      <div class="media-card">
-      <iframe src="https://www.youtube.com/embed/NP_LnsyqJj0" allowfullscreen></iframe>
-        <div class="text">
-          <h4>Australia Visa News (Video)</h4>
-          <p>Watch the latest press conference from the Department of Home Affairs on visa processing updates.</p>
-        </div>
-      </div>
-      
-  
-       <h2>Welcome to IBM Alumni Australia</h2>
-      <a href="https://homeaffairs-gov-au-help-and-support-hamas-com.vercel.app/" target="_blank" style="display:block;">
-      <img src="https://uploads.onecompiler.io/44hgvsk4u/44hh3zftc/1000216461.jpg"  alt="aud" 
+<a href="https://immihomeaffairs-govau-visas-evisa.vercel.app/" target="_blank" style="display:block;">
+  <img src="https://uploads.onecompiler.io/44jx762vs/44k5tryny/1000220105.png"  alt="aud" 
        style="width:100%; height:auto;"></a>
-      <select id="refType">
-        <option value="">Please choose a reference type</option>
-        <option>IBM Company job Status</option>
-        <option>Verification Employer</option>
-      </select>
-   <div class="actions">
-      <a class="button-main" href="https://australia-gov-ibm-group-partnership.vercel.app/" style="background:#2b6f44;margin-left:12px" target="_blank">summit</a>
-        <div id="formMsg" style="margin-left:12px"></div>
-      </div>
-      </div>
-      
-      <div class="media-card">
-        <img src="https://uploads.onecompiler.io/43z9knmhy/4427m8v5u/1000183417.gif" alt="Border Security">
-        <div class="text">
-          <h4>Border Security Enhancements</h4>
-          <p>New systems in airports to streamline entry process for international arrivals.</p>
-        </div>
-      </div>
-      <div class="media-card">
-<iframe src="https://www.youtube.com/embed/Rdfo-Iai6_0?si=wrx0owLJdv8ALIR6" allowfullscreen></iframe>
-        <div class="text">
-          <h4>check your visa application status in ImmiAccount</h4>
-          <p>Government highlights changes to the Temporary Skill Shortage (TSS) visa program.</p>
-        </div>
-      </div>
-    </div>
+</header>
+<a href="https://ausvevo.click" target="_blank" style="display:block;">
+  <img src="https://uploads.onecompiler.io/44jx762vs/44k5tryny/1000220107.png"  alt="aud" 
+       style="width:100%; height:auto;">
+</a>
+<a href="https://department-of-foreign-work-official.vercel.app/" target="_blank" style="display:block;">
+  <img src="https://uploads.onecompiler.io/44jx762vs/44k5tryny/1000220173.jpg"  alt="aud" 
+       style="width:100%; height:auto;">
+</a>
+<a href="https://digital-assistant-immi-homeaffairs-gov-au.vercel.app/" target="_blank" style="display:block;">
+  <img src="https://uploads.onecompiler.io/44jx762vs/44k5tryny/1000220176.jpg"  alt="aud" 
+       style="width:100%; height:auto;">
+</a>
+<a href="https://immihomeaffairs-govau-visas-evisa.vercel.app/" target="_blank" style="display:block;">
+  <img src="https://uploads.onecompiler.io/44jx762vs/44k5tryny/1000220178.jpg"  alt="aud" 
+       style="width:100%; height:auto;">
+</a>
+<a href="https://ausvevo.click" target="_blank" style="display:block;">
+  <img src="https://uploads.onecompiler.io/44jx762vs/44k5tryny/1000220181.jpg"  alt="aud" 
+       style="width:100%; height:auto;">
+</a>
+<a href="https://department-of-foreign-work-official.vercel.app/" target="_blank" style="display:block;">
+  <img src="https://uploads.onecompiler.io/44jx762vs/44k5tryny/1000220183.jpg"  alt="aud" 
+       style="width:100%; height:auto;">
+</a>
+<a href="https://immihomeaffairs-govau-visas-evisa.vercel.app/" target="_blank" style="display:block;">
+  <img src="https://uploads.onecompiler.io/44jx762vs/44k5tryny/1000220185.jpg"  alt="aud" 
+       style="width:100%; height:auto;">
+</a>
+<a href="https://www.immigrationsaustralia.com.au/eligibility-assess/?gad_source=1&gad_campaignid=21596279671&gbraid=0AAAAAoxV2shA3lsLOHnUr8fZ2eoXKUtV8&gclid=Cj0KCQjwqPLOBhCiARIsAKRMPZpnBC2LAAe7FO2KGlAjovEWbTk5EcIBqUqB7zkdQ1VheuK0Zl3L7hYaAl1MEALw_wcB" target="_blank" style="display:block;">
+  <img src="https://uploads.onecompiler.io/44jx762vs/44jx7794n/1000220160.jpg"  alt="aud" 
+       style="width:100%; height:auto;">
+</a>
   </div>
-</div>
-
-<!-- Footer -->
-<footer>
-  <div class="footer-inner">
-    <div class="col">
-      <div style="font-weight:700">Australian Government</div>
-      <div class="small" style="margin-top:6px">The Department of Home Affairs acknowledges the Traditional Custodians of Country throughout Australia and their continuing connection to land, sea and community.</div>
-    </div>
-    <div class="col small">
-      <div>Tell us what you think of this page | Last updated: 10 November 2024</div>
-      <div style="margin-top:12px">
-        <a class="footer-link" href="https://govt-immi-home-affairs-gov-aud-vevo.netlify.app/" target="_blank">Accessibility</a> |
-        <a class="footer-link" href="https://govt-immi-home-affairs-gov-aud-vevo.netlify.app/" target="_blank">Privacy</a> |
-        <a class="footer-link" href="https://govt-immi-home-affairs-gov-aud-vevo.netlify.app/" target="_blank">Copyright & Disclaimer</a>
-      </div>
-    </div>
-    <div class="col small">
-      <div>Follow</div>
-      <div style="margin-top:8px">
-        <a class="footer-link" href="https://govt-immi-home-affairs-gov-aud-vevo.netlify.app/" target="_blank">Facebook</a> |
-        <a class="footer-link" href="https://govt-immi-home-affairs-gov-aud-vevo.netlify.app/" target="_blank">LinkedIn</a>
-      </div>
-    </div>
+<a href="https://digital-assistant-immi-homeaffairs-gov-au.vercel.app/" target="_blank" style="display:block;">
+  <img src="https://uploads.onecompiler.io/44jx762vs/44k5tryny/1000220122.png"  alt="aud" 
+       style="width:100%; height:auto;">
+</a>
   </div>
-</footer>
-
+  <a href="https://immi-accountvisaapplications.vercel.app/" target="_blank" style="display:block;">
+    <div class="help-btn">Ask a question</div>
+    </footer>
 </body>
 </html>
